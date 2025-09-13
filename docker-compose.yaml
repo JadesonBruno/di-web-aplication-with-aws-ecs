@@ -1,0 +1,12 @@
+name: di-web-aplication-with-aws-ecs
+
+services:
+  terraform:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: web-aplication-with-aws-ecs-cont
+    env_file:
+      - .env
+    restart: unless-stopped
+    command: ["tail", "-f", "/dev/null"]
