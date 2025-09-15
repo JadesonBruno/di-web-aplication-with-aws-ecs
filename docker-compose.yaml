@@ -8,5 +8,7 @@ services:
     container_name: web-aplication-with-aws-ecs-cont
     env_file:
       - .env
+    volumes:
+      - ./terraform:/home/ubuntu/data-projects/di-web-aplication-with-aws-ecs/terraform
     restart: unless-stopped
     command: ["tail", "-f", "/dev/null"]
